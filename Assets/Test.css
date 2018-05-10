@@ -26,6 +26,7 @@ button:hover {
 }
 
 .content {
+    width: auto;
     max-width: 500px;
     height: 600px;
     position: absolute;

@@ -35,6 +35,14 @@ button:hover {
     margin-top: -300px;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
 #title {
     font-size: 24pt;
 }

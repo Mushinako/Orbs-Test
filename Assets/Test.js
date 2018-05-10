@@ -92,7 +92,6 @@ function circle(wasm, work, points) {
             + DistanceCircle.toString()
             + code.substring(code.indexOf('{')+1, code.lastIndexOf('}')));
         wk(code, points, pre);
-        };
     } else {
         let sum = 0;
 

@@ -67,7 +67,6 @@ function square(wasm, work, points) {
             + DistanceSquare.toString()
             + code.substring(code.indexOf('{')+1, code.lastIndexOf('}')));
         wk(code, points, pre);
-        };
     } else {
         let sum = 0;
 

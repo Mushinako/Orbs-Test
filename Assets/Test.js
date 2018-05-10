@@ -66,18 +66,7 @@ function square(wasm, work, points) {
         code = (`var pts = ${points};\n`
             + DistanceSquare.toString()
             + code.substring(code.indexOf('{')+1, code.lastIndexOf('}')));
-        let blob = new Blob([code], {type: 'application/javascript'});
-        worker = new Worker(URL.createObjectURL(blob));
-
-        worker.onmessage = message => {
-            let msg = message.data;
-            let sum = msg[0];
-            ds = msg[1];
-
-            let res = sum / points;
-            dgebi('result').innerHTML = `Average with ${points} points: ${res}`;
-            let diff = (res - pre) / pre * 100;
-            dgebi('diff').innerHTML = `Difference: ${diff}%;`;
+        wk(code, points, pre);
         };
     } else {
         let sum = 0;
@@ -88,10 +77,7 @@ function square(wasm, work, points) {
             sum += tmp.d;
         }
 
-        let res = sum / points;
-        dgebi('result').innerHTML = `Average with ${points} points: ${res}`;
-        let diff = (res - pre) / pre * 100;
-        dgebi('diff').innerHTML = `Difference: ${diff}%;`;
+        showResult(sum, points, pre)
     }
 }
 
@@ -106,18 +92,7 @@ function circle(wasm, work, points) {
         code = (`var pts = ${points};\n`
             + DistanceCircle.toString()
             + code.substring(code.indexOf('{')+1, code.lastIndexOf('}')));
-        let blob = new Blob([code], {type: 'application/javascript'});
-        worker = new Worker(URL.createObjectURL(blob));
-
-        worker.onmessage = message => {
-            let msg = message.data;
-            let sum = msg[0];
-            ds = msg[1];
-
-            let res = sum / points;
-            dgebi('result').innerHTML = `Average with ${points} points: ${res}`;
-            let diff = (res - pre) / pre * 100;
-            dgebi('diff').innerHTML = `Difference: ${diff}%;`;
+        wk(code, points, pre);
         };
     } else {
         let sum = 0;
@@ -128,11 +103,27 @@ function circle(wasm, work, points) {
             sum += tmp.d;
         }
 
-        let res = sum / points;
-        dgebi('result').innerHTML = `Average with ${points} points: ${res}`;
-        let diff = (res - pre) / pre * 100;
-        dgebi('diff').innerHTML = `Difference: ${diff}%;`;
+        showResult(sum, points, pre)
     }
+}
+
+function wk(code, points, pre) {
+    var blob = new Blob([code], {type: 'application/javascript'});
+    worker = new Worker(URL.createObjectURL(blob));
+
+    worker.onmessage = message => {
+        let msg = message.data;
+        ds = msg[1];
+
+        showResult(msg[0], points, pre)
+    }
+}
+
+function showResult(sum, points, pre) {
+    var res = sum / points;
+    dgebi('result').innerHTML = `Average with ${points} points: ${res}`;
+    var diff = (res - pre) / pre * 100;
+    dgebi('diff').innerHTML = `Difference: ${diff}%;`;
 }
 
 function calc(mode) {

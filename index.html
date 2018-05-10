@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="./Assets/Test.css">
+
+    <!-- LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML" async></script>
+
+    <!-- FUNCTIONS -->
+    <script src="./Assets/Test.js"></script>
+
+    <!-- NOSCRIPT -->
+    <noscript>
+        Your browser does not support JavaScript or JavaScript is disabled!
+    </noscript>
+</head>
+
+<body onload="check()">
+    <div class="content">
+        <div id="title">
+            <p>
+                <b>Do some tests!</b>
+            </p>
+        </div>
+        <div id="calc">
+            <button onclick="calc('square');">Unit Square</button>
+            <button onclick="calc('circle');">Unit Circle</button>
+        </div>
+        <div id="check">
+            <p id="wasm"></p>
+            <p id="worker"></p>
+        </div>
+        <p id="method"></p>
+        <div id="methods"></div>
+        <div id="wordswordswords">
+            <p id="quest"></p>
+            <p id="prediction"></p>
+            <p id="result"></p>
+            <p id="diff"></p>
+        </div>
+    </div>
+</body>

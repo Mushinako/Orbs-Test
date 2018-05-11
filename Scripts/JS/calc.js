@@ -19,6 +19,9 @@ function showResult(sum, points, pre) {
     dgebi('result').innerHTML = `Average with ${points} points: ${res}`;
     var diff = (res - pre) / pre * 100;
     dgebi('diff').innerHTML = `Difference: ${diff}%`;
+    for (let b of document.getElementsByTagName('button')) {
+        b.disabled = false;
+    }
 }
 
 function dealWithInput() {
@@ -56,6 +59,9 @@ function calc(mode) {
         dgebi('errornum').innerHTML = 'We need at least 1 sample to run the simulation! Please check your input.'
     } else {
         dgebi('errornum').innerHTML = `Running simulation with ${points} points.`
+        for (let b of document.getElementsByTagName('button')) {
+            b.disabled = true;
+        }
         switch (mode) {
             case 'square':
                 square(m, w, points);

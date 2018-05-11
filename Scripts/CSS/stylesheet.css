@@ -1,9 +1,18 @@
 @font-face {
     font-family: 'SteelCity';
-    src: url('./scb.ttf') format('truetype');
+    src: url('../../Assets/scb.ttf') format('truetype');
 }
 
 body {
+    font-family: 'SteelCity';
+}
+
+input {
+    display: table-cell;
+    width: 100%;
+}
+
+input[type="number"] {
     font-family: 'SteelCity';
 }
 
@@ -25,22 +34,21 @@ button:hover {
     cursor: pointer;
 }
 
-.content {
-    width: 500px;
-    height: 600px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -250px;
-    margin-top: -300px;
-}
-
-.footer {
+.header {
     position: fixed;
     left: 0;
-    bottom: 0;
+    top: 0;
     width: 100%;
     text-align: center;
+}
+
+.content {
+    width: 600px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: 0;
 }
 
 #title {

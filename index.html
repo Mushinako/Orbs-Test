@@ -11,14 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="./Assets/Test.css">
+    <link rel="stylesheet" href="./Scripts/CSS/stylesheet.css">
 
     <!-- LIBRARY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML" async></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- FUNCTIONS -->
-    <script src="./Assets/Test.js"></script>
+    <script src="./Scripts/JS/main.js"></script>
+    <script src="./Scripts/JS/calc.js"></script>
+    <script src="./Scripts/JS/square.js"></script>
+    <script src="./Scripts/JS/circle.js"></script>
+    <script src="./Scripts/JS/disk.js"></script>
 
     <!-- NOSCRIPT -->
     <noscript>
@@ -27,15 +31,28 @@
 </head>
 
 <body onload="check()">
+    <div class="header">
+        <p>
+            <a href="https://github.com/Mushinako/Orbs-Test">Source Code</a>&nbsp;|&nbsp;<a href="https://1drv.ms/p/s!AgKWDpdtrr1pgaxt3QDDZxmVbP1TBQ">Presentation</a>
+        </p>
+    </div>
     <div class="content" id="content">
         <div id="title">
             <p>
                 <b>Do some tests!</b>
             </p>
         </div>
+        <div>
+            <input id="numofsim" type="number" placeholder="Integer/E-Notation" autocomplete="false" value="1e6">
+            <p>
+                Input the number of test cases as an integer, optionally in "E-notation". E.g., a million can be represented as "1000000" or "1e6". Plz add 0's before decimal points when necessary, i.e., ".13e6" is <b>not</b> valid, but "0.13e6" is. Non-integers will be rounded up.
+            </p>
+            <p id="errornum">&nbsp;</p>
+        </div>
         <div id="calc">
             <button onclick="calc('square');">Unit Square</button>
             <button onclick="calc('circle');">Unit Circle</button>
+            <button onclick="calc('disk');">Unit Disk</button>
         </div>
         <div id="check">
             <p id="wasm"></p>
@@ -49,10 +66,5 @@
             <p id="result"></p>
             <p id="diff"></p>
         </div>
-    </div>
-    <div class="footer">
-        <p>
-            <a href="https://github.com/Mushinako/Orbs-Test">Source Code</a>&nbsp;|&nbsp;<a href="https://1drv.ms/p/s!AgKWDpdtrr1pgaxt3QDDZxmVbP1TBQ">Presentation</a>
-        </p>
     </div>
 </body>

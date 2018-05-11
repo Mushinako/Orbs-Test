@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <head>
+    <!-- STYLESHEET -->
     <style>
-    @font-face {
-        font-family: 'SteelCity';
-        src: url('./Assets/scb.ttf') format('truetype');
-    }
-
-    body {
-        font-family: 'SteelCity';
-    }
-
     .content {
         width: 480px;
         height: 160px;
@@ -25,38 +17,24 @@
         margin-left: auto;
         margin-right: auto;
     }
-
-    .button {
-        display: inline-block;
-        background-color: #e7e7e7;
-        border-radius: 12px;
-        -webkit-transition-duration: 0.4s;
-        transition-duration: 0.4s;
-        opacity: 0.8;
-    }
-
-    .button:hover {
-        background-color: #fff;
-        border: 2px solid #e7e7e7;
-        box-shadow: 0 3px 4px 0 rgba(0,0,0,0.25), 0 4px 12px 0 rgba(0,0,0,0.2);
-        opacity: 1;
-        cursor: pointer;
-    }
-
-    .button:active {
-        transform: translateY(1px);
-    }
     </style>
+    <link rel="stylesheet" href="./Scripts/CSS/common.css">
 
+    <!-- FUNCTIONS -->
     <script type="application/javascript">
     function joke() {
         window.alert('This page wants to know your momentum.')
-        document.getElementById('hello').innerHTML = 'Best wishes from Lemuel (Mushinako) and Tiffany :D';
+        document.getElementById('hello').innerHTML = '<a href="https://xkcd.com/1473/">Best wishes</a> from Lemuel (Mushinako) and Tiffany :D';
         document.getElementById('joke').remove();
     }
     </script>
 </head>
 <body>
+    <div class="header">
+        <p>
+            <a href="./index.html">Simulation</a>&nbsp;|&nbsp;<a href="https://github.com/Mushinako/Orbs-Test">Source Code</a>&nbsp;|&nbsp;<a href="https://1drv.ms/p/s!AgKWDpdtrr1pgaxt3QDDZxmVbP1TBQ">Presentation</a>&nbsp;|&nbsp;<a href="./LICENSE.html">License</a>
+        </p>
+    </div>
     <div class="content">
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" class="center" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
         <p>
@@ -65,7 +43,7 @@
         <p>
             Fonts included are all designated "free for commercial use".
         </p>
-        <button class="button" onclick="joke()" id="joke" style="vertical-align:middle">Joke</button>
+        <button onclick="joke()" id="joke" style="vertical-align:middle">Joke</button>
         <p id="hello"></p>
     </div>
 </body>

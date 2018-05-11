@@ -1,0 +1,17 @@
+input {
+    display: table-cell;
+    width: 100%;
+}
+
+input[type="number"] {
+    font-family: 'SteelCity';
+}
+
+.content {
+    width: 600px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: 0;
+}

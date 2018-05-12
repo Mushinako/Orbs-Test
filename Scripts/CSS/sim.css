@@ -10,7 +10,7 @@ input[type="number"] {
 .content {
     width: 600px;
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 50%;
     margin-left: -300px;
     margin-top: 0;

@@ -33,7 +33,35 @@ button:disabled {
     opacity: 0.2;
 }
 
+a {
+    text-decoration: none;
+}
+
+.header a {
+    display: inline-block;
+    background-color: black;
+    padding: 14px 25px;
+    text-align: center;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: indigo;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: maroon;
+}
+
 .header {
+    background: black;
     position: fixed;
     left: 0;
     top: 0;

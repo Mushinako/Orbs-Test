@@ -8,7 +8,9 @@ function containerResize() {
     }
 }
 
-containerResize();
-$(window).resize(() => {
+function resizer() {
     containerResize();
-});
+    $(window).resize(() => {
+        containerResize();
+    });
+}

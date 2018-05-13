@@ -33,6 +33,15 @@ button:disabled {
     opacity: 0.2;
 }
 
+abbr {
+    text-decoration: none;
+    color: skyblue;
+}
+
+abbr:hover {
+    color: blue;
+}
+
 a {
     text-decoration: none;
 }

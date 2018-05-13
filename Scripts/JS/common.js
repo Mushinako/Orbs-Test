@@ -1,5 +1,7 @@
 dgebi = s => document.getElementById(s);
 
+dgebtn = s => document.getElementsByTagName(s);
+
 function containerResize() {
     var win_wid = $(window).width();
     if (win_wid < 550) {

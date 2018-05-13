@@ -35,11 +35,11 @@ button:disabled {
 
 abbr {
     text-decoration: none;
-    color: skyblue;
+    color: blue;
 }
 
 abbr:hover {
-    color: blue;
+    color: skyblue;
 }
 
 a {

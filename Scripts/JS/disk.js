@@ -20,6 +20,7 @@ function calcDisk(pts) {
         d.push(tmp);
         sm += tmp.d;
     }
+
     postMessage([sm, d]);
 }
 
@@ -34,15 +35,9 @@ function disk(wasm, work, points) {
         code = (`var pts = ${points};\n`
             + DistanceDisk.toString()
             + code.substring(code.indexOf('{')+1, code.lastIndexOf('}')));
-        console.log(code);
         wk(code, points, pre);
     } else {
-        let sum = 0;
-        for (let _ = 0; _ < points; _++) {
-            let tmp = new DistanceDisk();
-            ds.push(tmp);
-            sum += tmp.d;
-        }
-        showResult(sum, points, pre);
+        let Distance = DistanceDisk;
+        lp(Distance, points, pre);
     }
 }

@@ -16,6 +16,7 @@ function calcSquare(pts) {
         d.push(tmp);
         sm += tmp.d;
     }
+
     postMessage([sm, d]);
 }
 
@@ -32,12 +33,7 @@ function square(wasm, work, points) {
             + code.substring(code.indexOf('{')+1, code.lastIndexOf('}')));
         wk(code, points, pre);
     } else {
-        let sum = 0;
-        for (let _ = 0; _ < points; _++) {
-            let tmp = new DistanceSquare();
-            ds.push(tmp);
-            sum += tmp.d;
-        }
-        showResult(sum, points, pre);
+        let Distance = DistanceSquare;
+        lp(Distance, points, pre)
     }
 }

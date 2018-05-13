@@ -14,13 +14,33 @@ function wk(code, points, pre) {
     }
 }
 
+function lp(Distance, points, pre) {
+    let sum = 0;
+    for (let _ = 0; _ < points; _++) {
+        let tmp = new Distance();
+        ds.push(tmp);
+        sum += tmp.d;
+    }
+    showResult(sum, points, pre);
+}
+
 function showResult(sum, points, pre) {
     var res = sum / points;
-    dgebi('result').innerHTML = `Average with ${points} points: ${res}`;
+    if (points === 1) {
+        dgebi('result').innerHTML = `Distance with 1 point: ${res}`;
+    } else {
+        dgebi('result').innerHTML = `Average with ${points} points: ${res}`;
+    }
+
     var diff = (res - pre) / pre * 100;
     dgebi('diff').innerHTML = `Difference: ${diff}%`;
-    for (let b of document.getElementsByTagName('button')) {
+
+    for (let b of dgebtn('button')) {
         b.disabled = false;
+    }
+
+    for (let i of dgebtn('input')) {
+        i.disabled = false;
     }
 }
 
@@ -50,18 +70,34 @@ function dealWithInput() {
 }
 
 function calc(mode) {
-    dgebi('result').innerHTML = 'Plotting points...';
+    dgebi('quest').innerHTML = '';
+    dgebi('prediction').innerHTML = '';
+    dgebi('result').innerHTML = '';
     dgebi('diff').innerHTML = '';
+
     var points = dealWithInput();
     if (points === false) {
-        dgebi('errornum').innerHTML = 'Number format error! Please check your input.'
+        dgebi('errornum').style.color = 'red';
+        dgebi('errornum').innerHTML = '<b>Number format error! Please check your input.</b>';
     } else if (points < 1) {
-        dgebi('errornum').innerHTML = 'We need at least 1 sample to run the simulation! Please check your input.'
+        dgebi('errornum').style.color = 'red';
+        dgebi('errornum').innerHTML = '<b>At least 1 sample is needed to run the simulation! Please check your input.</b>';
     } else {
-        dgebi('errornum').innerHTML = `Running simulation with ${points} points.`
-        for (let b of document.getElementsByTagName('button')) {
+        dgebi('result').innerHTML = 'Plotting points...';
+        if (points === 1) {
+            dgebi('errornum').innerHTML = `Running simulation with 1 point.`;
+        } else {
+            dgebi('errornum').innerHTML = `Running simulation with ${points} points.`;
+        }
+
+        for (let b of dgebtn('button')) {
             b.disabled = true;
         }
+
+        for (let i of dgebtn('input')) {
+            i.disabled = true;
+        }
+
         switch (mode) {
             case 'square':
                 square(m, w, points);

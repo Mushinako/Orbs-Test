@@ -11,35 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- STYLESHEET -->
-    <style>
-    .content {
-        width: 480px;
-        height: 160px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left: -240px;
-        margin-top: -80px;
-    }
-
-    .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    </style>
     <link rel="stylesheet" href="./Scripts/CSS/common.css">
+    <link rel="stylesheet" href="./Scripts/CSS/license.css">
 
     <!-- FUNCTIONS -->
-    <script type="application/javascript">
-    function joke() {
-        window.alert('This page wants to know your momentum.')
-        document.getElementById('hello').innerHTML = '<a href="https://xkcd.com/1473/">Best wishes</a> from Lemuel (Mushinako) and Tiffany :D';
-        document.getElementById('joke').remove();
-    }
-    </script>
+    <script src="./Scripts/JS/common.js"></script>
+    <script src="./Scripts/JS/license.js"></script>
 </head>
-<body>
+<body onload="scrpt();">
     <div class="header">
         <p>
             <b><a href="./index.html">Simulation</a><a href="https://github.com/Mushinako/Orbs-Test">Source Code</a><a href="https://1drv.ms/p/s!AgKWDpdtrr1pgaxt3QDDZxmVbP1TBQ">Presentation</a><a href="./LICENSE.html">License</a></b>
@@ -53,7 +32,7 @@
         <p>
             Fonts included are all designated "free for commercial use".
         </p>
-        <button onclick="joke()" id="joke" style="vertical-align:middle">Joke</button>
+        <button onclick="joke();" id="joke" style="vertical-align:middle">Joke</button>
         <p id="hello"></p>
     </div>
 </body>

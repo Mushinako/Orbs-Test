@@ -5,7 +5,7 @@ distances, hosted [here](https://mushinako.github.io/Orbs-Test)!
 ## Progress
 - [ ] Webpage Structure
     - [x] Basic Layout
-    - [ ] Links
+    - [x] Links
     - [ ] Credits and Minutiae
 - [ ] Unit Square
     - [x] Prediction
@@ -13,14 +13,14 @@ distances, hosted [here](https://mushinako.github.io/Orbs-Test)!
     - [x] Web Workers
     - [ ] WebAssembly
 - [ ] Unit Circle
-    - [ ] Prediction
+    - [x] Prediction
     - [x] JavaScript
     - [x] Web Workers
     - [ ] WebAssembly
 - [ ] Unit Disk
     - [ ] Prediction
-    - [ ] JavaScript
-    - [ ] Web Workers
+    - [x] JavaScript
+    - [x] Web Workers
     - [ ] WebAssembly
 
 ## License

@@ -24,9 +24,9 @@ function calcDisk(pts) {
 }
 
 function disk(wasm, work, points) {
-    pre = 1; // TODO: Actual average
+    pre = 0.9055; // TODO: Actual average
     dgebi('quest').innerHTML = 'Average distance of 2 points on a unit disk';
-    dgebi('prediction').innerHTML = `Prediction: \\(1\\approx${pre}\\)`;
+    dgebi('prediction').innerHTML = `Prediction: \\(0.9055\\approx${pre}\\)`;
     MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
 
     if (wasm) {} else if (work) {

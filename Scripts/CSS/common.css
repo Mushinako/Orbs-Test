@@ -37,13 +37,6 @@ a {
     text-decoration: none;
 }
 
-.header a {
-    display: inline-block;
-    background-color: black;
-    padding: 14px 25px;
-    text-align: center;
-}
-
 a:link {
     color: red;
 }
@@ -60,6 +53,13 @@ a:active {
     color: maroon;
 }
 
+.header a {
+    display: inline-block;
+    background-color: black;
+    padding: 14px 25px;
+    text-align: center;
+}
+
 .header {
     background: black;
     position: fixed;
@@ -67,6 +67,7 @@ a:active {
     top: 0;
     width: 100%;
     text-align: center;
+    z-index: 10;
 }
 
 #title {

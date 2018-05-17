@@ -1,3 +1,9 @@
+window.onload = function () {
+    scrpt();
+    check();
+    resizer();
+}
+
 function scrpt() {
     dgebi('content').style.display = 'block';
 }

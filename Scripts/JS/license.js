@@ -1,3 +1,8 @@
+window.onload = function () {
+    scrpt();
+    resizer();
+}
+
 function scrpt() {
     for (b of document.getElementsByTagName) {
         b.style.display = 'block';

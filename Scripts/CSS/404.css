@@ -5,6 +5,10 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+strong {
+    font-weight: bold;
+}
+
 .mini {
     font-size: 1em;
     color: #000;
